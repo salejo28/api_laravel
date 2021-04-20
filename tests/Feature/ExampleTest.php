@@ -18,4 +18,11 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    public function test_get_vehicles()
+    {
+        $response = $this->get('/vehiculos');
+
+        $response->assertOk();
+    }
 }
