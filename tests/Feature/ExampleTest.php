@@ -55,7 +55,8 @@ class ExampleTest extends TestCase
             'cedula_propietario' => '1000954519'
         ]);
 
-        $this->assertCount(1, Vehiculo::all());
+
+        $this->assertCount(Vehiculo::all()->count(), Vehiculo::all());
         $vehiculo = Vehiculo::first();
 
         $this->patch('/api/vehiculo' . $vehiculo->id, [
